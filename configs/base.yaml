@@ -1,0 +1,50 @@
+# Base configuration. Owner: Min. Shared file — change request required.
+# Layering: base.yaml -> models/*.yaml -> features/*.yaml -> experiments/EXP-NNNN.yaml
+
+project: kuairand-autonomous-ml-agent
+
+dataset:
+  name: KuaiRand-Pure
+  data_dir: ${KUAIRAND_DATA_DIR:-./KuaiRand-Pure/data}
+  label: long_view
+  splits:
+    train: [20220408, 20220421]
+    valid: [20220422, 20220428]
+    test:  [20220429, 20220508]
+  expected_rows:
+    train: 1141112
+    valid: 124909
+    test: 170588
+
+evaluation:
+  metrics: [GAUC, "nDCG@5"]
+  primary: mean(GAUC, nDCG@5)
+  k: 5
+  implementation: starter_kit/evaluate.py   # authoritative; never reimplement
+  seed_std_primary: 0.0008
+  significance_floor: 0.0016                # 2 sigma
+
+selection:
+  # Model selection, early stopping and convergence all read this split. Never test.
+  split: valid
+  metric: primary
+
+convergence:
+  epsilon: 0.002
+  n: 3
+  max_iterations: 50
+  max_wall_clock_seconds: 21600   # 6 hours
+
+reference_scores:
+  official_baseline:
+    valid: {GAUC: 0.6674, "nDCG@5": 0.5357, primary: 0.6016}
+    test:  {GAUC: 0.6610, "nDCG@5": 0.5282, primary: 0.5946}
+  item_popularity:
+    test:  {GAUC: 0.6308, "nDCG@5": 0.5121, primary: 0.5715}
+  random:
+    test:  {GAUC: 0.4996, "nDCG@5": 0.4511, primary: 0.4753}
+  oracle_ceiling:
+    valid: {GAUC: 1.0, "nDCG@5": 0.6968, primary: 0.8484}
+    test:  {GAUC: 1.0, "nDCG@5": 0.7289, primary: 0.8645}
+
+seeds: [0, 1, 2]   # minimum for an accepted result

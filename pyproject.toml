@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kuairand-autonomous-ml-agent"
+version = "0.1.0"
+description = "Autonomous ML research agent for the KuaiRand-Pure ranking challenge"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+dependencies = ["numpy>=1.24", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "ruff>=0.5"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "starter_kit"]
+markers = [
+  "requires_data: test needs the KuaiRand-Pure dataset on disk",
+  "slow: test takes more than ~30 seconds",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+exclude = ["starter_kit"]   # organizer reference code is never linted or reformatted
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

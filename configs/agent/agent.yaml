@@ -1,0 +1,46 @@
+# Autonomous agent configuration. Owner: Min. Status: SCAFFOLDED.
+
+extends: ../base.yaml
+
+loop:
+  max_iterations: 50
+  max_wall_clock_seconds: 21600
+  record_rejected_experiments: true    # failures are research evidence
+
+selection:
+  # The selector must not spend the whole budget on variations of one idea.
+  max_consecutive_same_family: 4
+  min_seeds_before_accepting: 3
+  significance_floor: 0.0016
+
+prior_evidence:
+  # Loaded at start-up so the agent does not rediscover published negative results.
+  rejected:
+    - id: ORG-NEG-001
+      claim: Adding static categorical features (CWM's 13 fields) does not help.
+      evidence: "primary 0.5940 vs 0.5950 for 5 fields — within noise"
+      source: starter_kit/README.md
+    - id: ORG-NEG-002
+      claim: Increasing embedding dimension does not help.
+      evidence: "k=8/16/32 -> 0.5895 / 0.5902 / 0.5887"
+      source: starter_kit/README.md
+    - id: ORG-NEG-003
+      claim: Pure user-side first-order terms cannot change within-user ordering.
+      evidence: "constant within a user; only item-side crosses can matter"
+      source: starter_kit/README.md
+  priorities:
+    - ranking_loss_alignment     # pairwise / listwise
+    - user_behaviour_sequences   # DIN / SIM
+    - multi_task_auxiliary_feedback
+    - watch_time_censored_regression
+    - temporal_features_and_drift
+    - alternative_architectures  # deprioritised: capacity is not the bottleneck
+
+runtime:
+  experiment_timeout_seconds: 3600
+  max_retries: 2
+  escalate_after_retries: true   # every escalation costs autonomy score
+
+llm:
+  provider: anthropic
+  track_tokens: true

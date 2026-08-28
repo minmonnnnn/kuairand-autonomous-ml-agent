@@ -1,0 +1,18 @@
+# Core (starter kit needs only numpy; keep the reference path dependency-light)
+numpy>=1.24
+
+# Config + schemas (Min / orchestration)
+pyyaml>=6.0
+pydantic>=2.6
+
+# Dev / test
+pytest>=8.0
+pytest-cov>=5.0
+ruff>=0.5
+
+# Optional, install as workstreams need them. Do NOT add to the
+# official-baseline reproduction path.
+# torch>=2.2
+# pandas>=2.2
+# scikit-learn>=1.4
+# lightgbm>=4.3

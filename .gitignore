@@ -1,0 +1,52 @@
+# ---- Dataset (NEVER commit) ----
+KuaiRand-Pure/
+KuaiRand-1K/
+KuaiRand-27K/
+data/raw/
+*.tar.gz
+*.csv
+!starter_kit/**/*.csv
+!docs/**/*.csv
+
+# ---- Generated run artifacts ----
+runs/active/*
+runs/completed/*
+runs/failed/*
+logs/iterations/*
+logs/agent/*
+logs/errors/*
+logs/resources/*
+artifacts/checkpoints/*
+artifacts/metrics/*
+artifacts/submissions/*
+!**/.gitkeep
+!**/README.md
+
+# ---- Secrets ----
+.env
+.env.local
+*.key
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Notebooks ----
+.ipynb_checkpoints/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,66 @@
+# Ownership enforcement. Mirrors docs/coordination/OWNERSHIP_MATRIX.md.
+# Replace the placeholder handles with real GitHub usernames before pushing.
+
+# Default: architecture owner reviews anything unclaimed
+*                           @min-handle
+
+# Organizer reference code — never modified; any diff here needs everyone's eyes
+/starter_kit/               @min-handle @rishi-handle @vidush-handle @sarthak-handle @nandit-handle
+
+# Min — architecture, orchestration, integration
+/src/agent/                 @min-handle
+/src/orchestration/         @min-handle
+/src/registry/              @min-handle
+/src/paths.py               @min-handle
+/configs/                   @min-handle
+/docs/                      @min-handle
+/scripts/                   @min-handle
+/tests/unit/                @min-handle
+/tests/integration/         @min-handle
+
+# Rishi — data and features
+/src/data/                  @rishi-handle @min-handle
+/src/features/              @rishi-handle @min-handle
+/configs/features/          @rishi-handle
+/tests/data/                @rishi-handle
+/tests/features/            @rishi-handle
+/docs/research/features/    @rishi-handle
+/experiments/features/      @rishi-handle
+
+# Vidush — models and training
+/src/models/                @vidush-handle @min-handle
+/src/training/              @vidush-handle @min-handle
+/configs/models/            @vidush-handle
+/tests/models/              @vidush-handle
+/tests/training/            @vidush-handle
+/docs/research/models/      @vidush-handle
+/experiments/models/        @vidush-handle
+
+# Sarthak — evaluation, experimental science, research
+/src/evaluation/            @sarthak-handle @min-handle
+/src/experiments/           @sarthak-handle @min-handle
+/src/research/              @sarthak-handle @min-handle
+/tests/evaluation/          @sarthak-handle
+/docs/research/             @sarthak-handle
+/research/                  @sarthak-handle
+/experiments/analysis/      @sarthak-handle
+/experiments/ablations/     @sarthak-handle
+/experiments/baseline/      @sarthak-handle @min-handle
+
+# Nandit — runtime, robustness, resources
+/src/runtime/               @nandit-handle @min-handle
+/src/reliability/           @nandit-handle @min-handle
+/src/monitoring/            @nandit-handle @min-handle
+/src/llm/                   @nandit-handle @min-handle
+/src/logging/               @nandit-handle @min-handle
+/tests/runtime/             @nandit-handle
+/tests/reliability/         @nandit-handle
+/docs/research/robustness/  @nandit-handle
+
+# Shared — change request required
+/TEAM_SOT.md                @min-handle
+/README.md                  @min-handle
+/CONTRIBUTING.md            @min-handle
+/pyproject.toml             @min-handle
+/requirements.txt           @min-handle
+/docs/coordination/INTERFACE_CONTRACTS.md  @min-handle @rishi-handle @vidush-handle @sarthak-handle @nandit-handle

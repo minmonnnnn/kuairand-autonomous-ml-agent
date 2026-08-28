@@ -1,0 +1,31 @@
+# EXP-0000-OFFICIAL-BASELINE. Owner: Min / Sarthak.
+# Mirrors the organizer FM configuration exactly. Do not tune this file — it exists to
+# reproduce their number, not to improve on it.
+
+extends: base.yaml
+
+experiment_id: EXP-0000-OFFICIAL-BASELINE
+description: Organizer-provided Factorization Machine, reproduced verbatim.
+
+model:
+  name: fm
+  k: 16
+  lr: 0.001
+  l2: 1.0e-6
+
+training:
+  batch_size: 8192
+  max_epochs: 40
+  patience: 4
+  optimizer: adam
+
+features:
+  builder: official_5_fields
+  fields: [user_id, video_id, author_id, tab, dur_bucket]
+  dur_bucket_quantiles: 10
+
+seeds: [0, 1, 2, 3, 4]
+
+expected:
+  valid: {GAUC: 0.6674, "nDCG@5": 0.5357, primary: 0.6016}
+  tolerance_primary: 0.002
