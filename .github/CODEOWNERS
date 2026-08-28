@@ -2,65 +2,65 @@
 # Replace the placeholder handles with real GitHub usernames before pushing.
 
 # Default: architecture owner reviews anything unclaimed
-*                           @min-handle
+*                           @minmonnnnn
 
 # Organizer reference code — never modified; any diff here needs everyone's eyes
-/starter_kit/               @min-handle @rishi-handle @vidush-handle @sarthak-handle @nandit-handle
+/starter_kit/               @minmonnnnn @rbrishi15 @Vidush19 @sarthaksinha2201 @nikola144
 
 # Min — architecture, orchestration, integration
-/src/agent/                 @min-handle
-/src/orchestration/         @min-handle
-/src/registry/              @min-handle
-/src/paths.py               @min-handle
-/configs/                   @min-handle
-/docs/                      @min-handle
-/scripts/                   @min-handle
-/tests/unit/                @min-handle
-/tests/integration/         @min-handle
+/src/agent/                 @minmonnnnn
+/src/orchestration/         @minmonnnnn
+/src/registry/              @minmonnnnn
+/src/paths.py               @minmonnnnn
+/configs/                   @minmonnnnn
+/docs/                      @minmonnnnn
+/scripts/                   @minmonnnnn
+/tests/unit/                @minmonnnnn
+/tests/integration/         @minmonnnnn
 
 # Rishi — data and features
-/src/data/                  @rishi-handle @min-handle
-/src/features/              @rishi-handle @min-handle
-/configs/features/          @rishi-handle
-/tests/data/                @rishi-handle
-/tests/features/            @rishi-handle
-/docs/research/features/    @rishi-handle
-/experiments/features/      @rishi-handle
+/src/data/                  @rbrishi15 @minmonnnnn
+/src/features/              @rbrishi15 @minmonnnnn
+/configs/features/          @rbrishi15
+/tests/data/                @rbrishi15
+/tests/features/            @rbrishi15
+/docs/research/features/    @rbrishi15
+/experiments/features/      @rbrishi15
 
 # Vidush — models and training
-/src/models/                @vidush-handle @min-handle
-/src/training/              @vidush-handle @min-handle
-/configs/models/            @vidush-handle
-/tests/models/              @vidush-handle
-/tests/training/            @vidush-handle
-/docs/research/models/      @vidush-handle
-/experiments/models/        @vidush-handle
+/src/models/                @Vidush19 @minmonnnnn
+/src/training/              @Vidush19 @minmonnnnn
+/configs/models/            @Vidush19
+/tests/models/              @Vidush19
+/tests/training/            @Vidush19
+/docs/research/models/      @Vidush19
+/experiments/models/        @Vidush19
 
 # Sarthak — evaluation, experimental science, research
-/src/evaluation/            @sarthak-handle @min-handle
-/src/experiments/           @sarthak-handle @min-handle
-/src/research/              @sarthak-handle @min-handle
-/tests/evaluation/          @sarthak-handle
-/docs/research/             @sarthak-handle
-/research/                  @sarthak-handle
-/experiments/analysis/      @sarthak-handle
-/experiments/ablations/     @sarthak-handle
-/experiments/baseline/      @sarthak-handle @min-handle
+/src/evaluation/            @sarthaksinha2201 @minmonnnnn
+/src/experiments/           @sarthaksinha2201 @minmonnnnn
+/src/research/              @sarthaksinha2201 @minmonnnnn
+/tests/evaluation/          @sarthaksinha2201
+/docs/research/             @sarthaksinha2201
+/research/                  @sarthaksinha2201
+/experiments/analysis/      @sarthaksinha2201
+/experiments/ablations/     @sarthaksinha2201
+/experiments/baseline/      @sarthaksinha2201 @minmonnnnn
 
 # Nandit — runtime, robustness, resources
-/src/runtime/               @nandit-handle @min-handle
-/src/reliability/           @nandit-handle @min-handle
-/src/monitoring/            @nandit-handle @min-handle
-/src/llm/                   @nandit-handle @min-handle
-/src/logging/               @nandit-handle @min-handle
-/tests/runtime/             @nandit-handle
-/tests/reliability/         @nandit-handle
-/docs/research/robustness/  @nandit-handle
+/src/runtime/               @nikola144 @minmonnnnn
+/src/reliability/           @nikola144 @minmonnnnn
+/src/monitoring/            @nikola144 @minmonnnnn
+/src/llm/                   @nikola144 @minmonnnnn
+/src/logging/               @nikola144 @minmonnnnn
+/tests/runtime/             @nikola144
+/tests/reliability/         @nikola144
+/docs/research/robustness/  @nikola144
 
 # Shared — change request required
-/TEAM_SOT.md                @min-handle
-/README.md                  @min-handle
-/CONTRIBUTING.md            @min-handle
-/pyproject.toml             @min-handle
-/requirements.txt           @min-handle
-/docs/coordination/INTERFACE_CONTRACTS.md  @min-handle @rishi-handle @vidush-handle @sarthak-handle @nandit-handle
+/TEAM_SOT.md                @minmonnnnn
+/README.md                  @minmonnnnn
+/CONTRIBUTING.md            @minmonnnnn
+/pyproject.toml             @minmonnnnn
+/requirements.txt           @minmonnnnn
+/docs/coordination/INTERFACE_CONTRACTS.md  @minmonnnnn @rbrishi15 @Vidush19 @sarthaksinha2201 @nikola144
